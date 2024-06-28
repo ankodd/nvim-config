@@ -3,8 +3,16 @@ set nocompatible
 
 " ignore case with searching
 set ignorecase
+set linebreak
+set list
+set wrap
+set ai
 set smartcase
 set termguicolors
+
+set cursorline
+
+highlight Cursorline cterm=bold
 
 set hlsearch
 
@@ -49,7 +57,7 @@ call plug#end()
 
 
 " set colorschemas
-colorscheme mellow
+"colorscheme mellow
 
 
 autocmd StdinReadPre * let s:std_in=1
@@ -61,5 +69,5 @@ let g:NERDTreeFileLines = 1
 
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-" autocomplite with TAB
+" autocomplete with TAB
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
